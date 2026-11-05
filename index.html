@@ -240,9 +240,9 @@
       <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
     </a>
 
-    <a class="cta" href="#" data-zoom="assets/zalo-qr.webp" data-cap="Mở Zalo → quét mã QR để kết bạn với Bé Xì Trum">
+    <a class="cta" id="zaloBtn" href="https://zaloapp.com/qr/p/vrrm9as113tc" target="_blank" rel="noopener" data-qr="assets/zalo-qr.webp" data-cap="Quét mã QR bằng Zalo trên điện thoại để nhắn Bé Xì Trum">
       <span class="ic zalo">Zalo</span>
-      <span class="txt"><b>Zalo Bé Xì Trum</b><small>(+82) 010-4921-0207 · bấm để xem mã QR</small></span>
+      <span class="txt"><b>Zalo Bé Xì Trum</b><small>(+82) 010-4921-0207 · bấm để nhắn Zalo ngay</small></span>
       <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
     </a>
 
@@ -402,6 +402,16 @@
       modal.classList.add('open');
     });
   });
+  // Zalo: điện thoại mở thẳng app Zalo; máy tính hiện mã QR để quét
+  var zb=document.getElementById('zaloBtn');
+  var isPhone=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Macintosh/.test(navigator.userAgent));
+  if(zb&&!isPhone){
+    zb.addEventListener('click',function(e){
+      e.preventDefault();
+      mImg.src=zb.dataset.qr; mImg.alt=zb.dataset.cap; mCap.textContent=zb.dataset.cap;
+      modal.classList.add('open');
+    });
+  }
   modal.addEventListener('click',function(e){ if(e.target!==mImg) modal.classList.remove('open'); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') modal.classList.remove('open'); });
 
