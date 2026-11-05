@@ -1,0 +1,7 @@
+# Ảnh gốc (không cần cho website, đã có bản tối ưu trong assets/)
+/*.jpg
+/*.JPG
+# Cấu hình cục bộ
+.claude/
+Thumbs.db
+.DS_Store

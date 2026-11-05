@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Xi Trum Mobile</title>
+<meta name="description" content="Xi Trum Mobile – Sim sinh viên, lắp WiFi ưu đãi, điện thoại – iPad – laptop cũ mới giá tốt tại Daejeon. Đại lý chính thức Hanpass.">
+<meta name="theme-color" content="#00214A">
+<meta property="og:title" content="Xi Trum Mobile – Uy tín • Chất lượng • Giá tốt">
+<meta property="og:description" content="Sim sinh viên • Lắp WiFi toàn Korea • Điện thoại – iPad – Laptop • Làm thẻ Hanpass miễn phí. 궁동 402-4 · 도마동 25-2 (Lộc Boong Store)">
+<meta property="og:image" content="assets/storefront.webp">
+<link rel="icon" href="assets/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* ===== Màu nhận diện Xi Trum Mobile (lấy từ logo) ===== */
+  :root{
+    --navy:#00214A;      /* xanh navy logo */
+    --navy-2:#0A2F66;
+    --blue:#1E50E6;      /* xanh biển hiệu */
+    --red:#E41E26;       /* đỏ logo */
+    --red-2:#FF3B3F;
+    --bg:#F3F6FC;
+    --card:#FFFFFF;
+    --ink:#0B1B36;
+    --muted:#5A6A85;
+    --line:#E2E8F3;
+    --radius:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.5;
+    min-height:100vh;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:480px;margin:0 auto;padding:0 16px 40px;position:relative}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;overflow:hidden;
+    background:var(--navy);
+    padding:28px 16px 92px;text-align:center;color:#fff;
+  }
+  .hero::before,.hero::after{
+    content:"";position:absolute;left:-20%;width:140%;height:26px;
+    transform:rotate(-8deg);
+  }
+  .hero::before{bottom:58px;background:var(--red);box-shadow:0 14px 0 0 #fff}
+  .hero::after{bottom:-6px;height:60px;background:var(--bg)}
+  .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1.2px,transparent 1.2px);background-size:18px 18px;mask-image:linear-gradient(180deg,#000 0%,transparent 75%)}
+  .hero-top{position:relative;display:flex;justify-content:center;gap:8px;margin-bottom:18px}
+  .pill{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12px;font-weight:600;letter-spacing:.2px;
+    padding:6px 12px;border-radius:999px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  }
+  .live{width:8px;height:8px;border-radius:50%;background:#2EE07A;box-shadow:0 0 0 0 rgba(46,224,122,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(46,224,122,0)}100%{box-shadow:0 0 0 0 rgba(46,224,122,0)}}
+  .closed .live{background:#FFB020;animation:none}
+
+  .logo-card{
+    position:relative;width:132px;height:132px;margin:0 auto 14px;
+    background:#fff;border-radius:50%;display:grid;place-items:center;
+    box-shadow:0 0 0 5px rgba(255,255,255,.12),0 0 0 6px var(--red),0 18px 40px rgba(0,0,0,.35);
+  }
+  .logo-card img{width:104px}
+  h1{position:relative;font-size:30px;font-weight:900;letter-spacing:.5px;line-height:1.1}
+  h1 span{color:var(--red-2)}
+  .tagline{
+    position:relative;display:inline-flex;gap:8px;align-items:center;margin-top:12px;
+    background:#fff;color:var(--navy);font-weight:800;font-size:12.5px;letter-spacing:.6px;
+    padding:7px 14px;border-radius:999px;text-transform:uppercase;
+  }
+  .tagline i{width:6px;height:6px;border-radius:50%;background:var(--red);display:block}
+  .script{position:relative;margin-top:10px;font-style:italic;color:#C9D6F2;font-size:14px}
+
+  /* ===== CTA ===== */
+  .cta-list{display:grid;gap:12px;margin-top:-58px;position:relative;z-index:2}
+  .cta{
+    position:relative;display:flex;align-items:center;gap:14px;
+    padding:14px 16px;border-radius:18px;
+    background:var(--card);border:1px solid var(--line);
+    box-shadow:0 6px 18px rgba(0,33,74,.07);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .cta:active{transform:scale(.98)}
+  @media (hover:hover){.cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,33,74,.14)}}
+  .cta .ic{flex:none;width:46px;height:46px;border-radius:14px;display:grid;place-items:center}
+  .cta .ic svg{width:24px;height:24px}
+  .cta .txt{flex:1;min-width:0}
+  .cta b{display:block;font-size:16px;font-weight:800;line-height:1.25}
+  .cta small{display:block;font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cta .arr{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--bg);color:var(--navy)}
+  .cta .arr svg{width:16px;height:16px}
+
+  /* Nút chính: Fanpage & TikTok */
+  .cta.primary{border:none;color:#fff;padding:18px 16px}
+  .cta.primary small{color:rgba(255,255,255,.78)}
+  .cta.primary .arr{background:rgba(255,255,255,.16);color:#fff}
+  .cta.fb{background:linear-gradient(135deg,var(--blue) 0%,var(--navy) 100%);box-shadow:0 12px 28px rgba(30,80,230,.35)}
+  .cta.fb .ic{background:#fff;color:#1877F2}
+  .cta.tt{background:linear-gradient(135deg,#0B0B12 0%,var(--navy) 100%);box-shadow:0 12px 28px rgba(0,33,74,.35)}
+  .cta.tt .ic{background:#fff}
+  .cta.tt::after{content:"";position:absolute;right:0;top:0;bottom:0;width:6px;border-radius:0 18px 18px 0;background:linear-gradient(#25F4EE,var(--red-2))}
+  .badge{
+    position:absolute;top:-9px;right:14px;
+    font-size:10.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+    background:var(--red);color:#fff;padding:3px 9px;border-radius:999px;
+    box-shadow:0 4px 10px rgba(228,30,38,.4);
+  }
+  .ic.call{background:#FFE9EA;color:var(--red)}
+  .ic.zalo{background:#E6F0FF;color:#0068FF;font-weight:900;font-size:13px}
+  .ic.map{background:#E9FBF0;color:#03A94F}
+
+  /* ===== Sections ===== */
+  section{margin-top:28px}
+  .h2{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:12px}
+  .h2::before{content:"";width:5px;height:20px;border-radius:3px;background:var(--red)}
+
+  .h2row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .h2row .h2{margin:0}
+  .h2row a{font-size:13px;font-weight:700;color:var(--blue)}
+  .feat{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 8px;scrollbar-width:none}
+  .feat::-webkit-scrollbar{display:none}
+  .fp{flex:none;width:150px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .fp .art{position:relative;aspect-ratio:1/1;display:grid;place-items:center;background:radial-gradient(circle at 50% 38%,#fff 0,#E9EFFA 70%)}
+  .fp .art svg{width:72%;height:72%}
+  .fp .art img{width:100%;height:100%;object-fit:cover}
+  .fp .tag{position:absolute;top:8px;left:8px;background:var(--red);color:#fff;font-size:10px;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:999px}
+  .fp .b{padding:8px 10px 10px}
+  .fp h3{font-size:13px;font-weight:800;color:var(--navy);line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:32px}
+  .fp .pr{font-size:12.5px;font-weight:800;color:var(--red);margin-top:3px}
+  .fp .pr.ask{color:var(--blue)}
+  .catalog-btn{margin-top:6px;display:flex;align-items:center;gap:12px;padding:16px;border-radius:18px;color:#fff;background:linear-gradient(135deg,var(--red) 0%,#B5121A 100%);box-shadow:0 12px 26px rgba(228,30,38,.3)}
+  .catalog-btn span{flex:1}
+  .catalog-btn b{display:block;font-size:16px;font-weight:800}
+  .catalog-btn small{font-size:12.5px;color:rgba(255,255,255,.85)}
+  .catalog-btn svg{width:22px;height:22px;flex:none}
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 8px;text-align:center}
+  .svc svg{width:28px;height:28px;margin:0 auto 6px;color:var(--navy)}
+  .svc b{display:block;font-size:13px;font-weight:800;color:var(--navy);line-height:1.2}
+  .svc small{display:block;font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;margin-top:2px}
+  .svc.red svg{color:var(--red)}
+
+  .promo{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:6px 16px}
+  .promo li{list-style:none;display:flex;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14.5px;font-weight:500}
+  .promo li:last-child{border-bottom:0}
+  .promo .ck{flex:none;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;margin-top:1px}
+  .promo .ck svg{width:12px;height:12px}
+  .promo em{font-style:normal;color:var(--red);font-weight:800}
+
+  .hanpass{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 26px rgba(0,33,74,.18)}
+  .hanpass img{width:100%;aspect-ratio:1/1;object-fit:cover}
+
+  .info{background:var(--navy);color:#fff;border-radius:var(--radius);padding:18px;display:grid;gap:14px;position:relative;overflow:hidden}
+  .info::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;border:18px solid rgba(228,30,38,.5)}
+  .row{display:flex;gap:12px;align-items:flex-start;position:relative}
+  .row .ri{flex:none;width:36px;height:36px;border-radius:12px;background:rgba(255,255,255,.1);display:grid;place-items:center}
+  .row .ri svg{width:18px;height:18px;color:#fff}
+  .row small{display:block;font-size:12px;color:#AFC0E3}
+  .row b{display:block;font-size:15px;font-weight:700}
+  .row .ko{font-family:"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif}
+  .copy{margin-top:6px;font-size:12px;font-weight:700;color:var(--navy);background:#fff;border:0;border-radius:999px;padding:5px 12px;cursor:pointer;font-family:inherit}
+
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .gallery button{border:0;padding:0;background:none;cursor:zoom-in;border-radius:14px;overflow:hidden;display:block}
+  .gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform .3s}
+  .gallery button:first-child{grid-column:span 2}
+  .gallery button:first-child img{aspect-ratio:16/10}
+  @media (hover:hover){.gallery button:hover img{transform:scale(1.04)}}
+  .gallery:not(.all) .more-item{display:none}
+  .gallery.all button:last-child{grid-column:span 2}
+  .gallery.all button:last-child img{aspect-ratio:16/10}
+  .show-more{display:block;width:100%;margin-top:10px;padding:12px;border-radius:14px;border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-family:inherit;font-weight:700;font-size:14px;cursor:pointer}
+  .gallery.all + .show-more{display:none}
+
+  footer{text-align:center;margin-top:30px;color:var(--muted);font-size:12px}
+  footer .soc{display:flex;justify-content:center;gap:10px;margin-bottom:10px}
+  footer .soc a{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center}
+  footer .soc svg{width:18px;height:18px}
+
+  /* ===== Modal ===== */
+  .modal{position:fixed;inset:0;background:rgba(0,14,34,.86);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+  .modal.open{display:flex}
+  .modal img{max-height:84vh;width:auto;max-width:100%;border-radius:16px}
+  .modal .x{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:0;background:#fff;color:var(--navy);font-size:22px;font-weight:700;cursor:pointer}
+  .modal .cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font-size:13px;padding:0 16px}
+
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--navy);color:#fff;font-size:13px;font-weight:600;padding:10px 16px;border-radius:999px;transition:.25s;z-index:60;pointer-events:none}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.live{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="dots"></div>
+  <div class="hero-top">
+    <span class="pill" id="status"><span class="live"></span><span id="statusText">Mở cửa 11:00 – 22:00</span></span>
+    <span class="pill">📍 Daejeon</span>
+  </div>
+  <div class="logo-card"><img src="assets/logo.webp" alt="Logo Xi Trum Mobile" width="104" height="74"></div>
+  <h1>XI TRUM <span>MOBILE</span></h1>
+  <div class="tagline">Uy tín <i></i> Chất lượng <i></i> Giá tốt</div>
+  <p class="script">Hân hạnh phục vụ quý khách! ♡</p>
+</header>
+
+<main class="wrap">
+
+  <!-- ===== Nút CTA ===== -->
+  <nav class="cta-list" aria-label="Liên kết">
+    <!-- FANPAGE -->
+    <a class="cta primary fb" href="https://www.facebook.com/profile.php?id=61592877740484" target="_blank" rel="noopener">
+      <span class="badge">Nhận tư vấn ngay</span>
+      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07"/></svg></span>
+      <span class="txt"><b>Fanpage Xi Trum Mobile</b><small>Cập nhật hàng mới &amp; ưu đãi mỗi ngày</small></span>
+      <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+    </a>
+
+    <!-- TIKTOK — thay link bên dưới bằng link kênh TikTok của quán -->
+    <a class="cta primary tt" href="https://www.tiktok.com/@xitrummobile" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24"><path fill="#25F4EE" d="M9.4 9.6v-1A7.4 7.4 0 0 0 3.8 21.8a7.4 7.4 0 0 1 5.6-12.2"/><path fill="#25F4EE" d="M9.6 20.6a3.4 3.4 0 0 0 3.4-3.2V1.4h3a5.6 5.6 0 0 1-.1-1.1h-4v16a3.4 3.4 0 0 1-3.4 3.2 3.3 3.3 0 0 1-1.6-.4 3.4 3.4 0 0 0 2.7 1.5M21.4 6.8V5.8a5.6 5.6 0 0 1-3.1-.9 5.7 5.7 0 0 0 3.1 1.9"/><path fill="#FE2C55" d="M18.3 4.9a5.6 5.6 0 0 1-1.4-3.7h-1a5.7 5.7 0 0 0 2.4 3.7M9.6 12.7a3.4 3.4 0 0 0-1.6 6.4 3.4 3.4 0 0 1 3.8-5.3v-4a7.3 7.3 0 0 0-1-.1h-.2v3.1a3.4 3.4 0 0 0-1-.1"/><path fill="#FE2C55" d="M21.4 6.8v3.1a9.6 9.6 0 0 1-5.6-1.8v8.2a7.4 7.4 0 0 1-11.5 6.1 7.4 7.4 0 0 0 12.7-5.1V9.1a9.6 9.6 0 0 0 5.6 1.8V7a5.6 5.6 0 0 1-1.2-.2"/><path fill="#000" d="M15.8 16.3V8.1a9.6 9.6 0 0 0 5.6 1.8V6.8a5.7 5.7 0 0 1-3.1-1.9 5.6 5.6 0 0 1-2.4-3.7h-3v16a3.4 3.4 0 0 1-6.2 1.9 3.4 3.4 0 0 1 3.8-5.3V10.6a7.4 7.4 0 0 0-5.6 12.4 7.4 7.4 0 0 0 10.9-6.7"/></svg></span>
+      <span class="txt"><b>TikTok Xi Trum Mobile</b><small>@xitrummobile · Review máy, unbox &amp; deal hot</small></span>
+      <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+    </a>
+
+    <a class="cta" href="tel:+821097301903">
+      <span class="ic call"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span>
+      <span class="txt"><b>Gọi / nhắn tin: 010-9730-1903</b><small>Tư vấn online 11:00 – 21:00</small></span>
+      <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a class="cta" href="#" data-zoom="assets/zalo-qr.webp" data-cap="Mở Zalo → quét mã QR để kết bạn với Bé Xì Trum">
+      <span class="ic zalo">Zalo</span>
+      <span class="txt"><b>Zalo Bé Xì Trum</b><small>(+82) 010-4921-0207 · bấm để xem mã QR</small></span>
+      <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <a class="cta" href="https://map.naver.com/p/search/%EB%8C%80%EC%A0%84%20%EC%9C%A0%EC%84%B1%EA%B5%AC%20%EA%B6%81%EB%8F%99%20402-4" target="_blank" rel="noopener">
+      <span class="ic map"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+      <span class="txt"><b>Chỉ đường: Xi Trum Mobile</b><small>대전 유성구 궁동 402-4, 1층 · Naver Map</small></span>
+      <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+    </a>
+
+    <a class="cta" href="https://map.naver.com/p/search/%EB%8C%80%EC%A0%84%20%EC%84%9C%EA%B5%AC%20%EB%8F%84%EB%A7%88%EB%8F%99%2025-2" target="_blank" rel="noopener">
+      <span class="ic map"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+      <span class="txt"><b>Chỉ đường: Lộc Boong Store</b><small>대전 서구 도마동 25-2 폰매장 · Naver Map</small></span>
+      <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+    </a>
+  </nav>
+
+  <!-- ===== Hàng mới về (lấy từ products.js) ===== -->
+  <section class="reveal">
+    <div class="h2row"><h2 class="h2">Hàng mới về</h2><a href="catalog.html">Xem tất cả →</a></div>
+    <div class="feat" id="feat"></div>
+    <a class="catalog-btn" href="catalog.html">
+      <span><b>Xem catalog điện thoại</b><small>iPhone · iPad · Laptop · AirPods đang có tại quán</small></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+  </section>
+
+  <!-- ===== Dịch vụ ===== -->
+  <section class="reveal">
+    <h2 class="h2">Dịch vụ của quán</h2>
+    <div class="services">
+      <div class="svc red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 2h9l5 5v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><rect x="8" y="10" width="8" height="8" rx="1"/><path d="M12 10v8M8 14h8"/></svg><b>SIM</b><small>Giá rẻ</small></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1.3" fill="currentColor"/></svg><b>WiFi</b><small>Toàn Korea</small></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 18.5h3" stroke-linecap="round"/></svg><b>Điện thoại</b><small>Cũ – mới</small></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2.5"/><circle cx="12" cy="18.5" r=".8" fill="currentColor"/></svg><b>iPad</b><small>Chính hãng</small></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20l-2-4H4z"/></svg><b>Laptop</b><small>Chính hãng</small></div>
+      <div class="svc red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20M6 15h4" stroke-linecap="round"/></svg><b>Thẻ Hanpass</b><small>Miễn phí</small></div>
+    </div>
+  </section>
+
+  <!-- ===== Ưu đãi ===== -->
+  <section class="reveal">
+    <h2 class="h2">Ưu đãi đang có</h2>
+    <ul class="promo">
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><em>Sim miễn phí</em> cho học sinh nhập cảnh</span></li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Lắp WiFi toàn Korea <em>tặng 150k ~ 350k₩</em></span></li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Làm sim chính chủ &amp; gia hạn sim 7 tháng nhận <em>50 ~ 80 ~ 200k₩</em> hoặc quà tuỳ chọn</span></li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Làm thẻ <em>Hanpass Online miễn phí</em></span></li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Điện thoại – iPad – Laptop <em>cũ mới chất lượng, giá tốt</em></span></li>
+    </ul>
+  </section>
+
+  <section class="reveal">
+    <button class="hanpass" style="border:0;padding:0;display:block;width:100%;cursor:zoom-in" data-zoom="assets/hanpass.webp" data-cap="Đại lý chính thức của Hanpass">
+      <img src="assets/hanpass.webp" alt="Đại lý chính thức của Hanpass – Hanpass x Xi Trum Mobile" loading="lazy">
+    </button>
+  </section>
+
+  <!-- ===== Thông tin ===== -->
+  <section class="reveal">
+    <h2 class="h2">Thông tin cửa hàng</h2>
+    <div class="info">
+      <div class="row">
+        <span class="ri"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+        <div><small>Địa chỉ 1 · Xi Trum Mobile</small><b class="ko">대전 유성구 궁동 402-4, 1층</b>
+          <button class="copy" type="button" data-copy="대전광역시 유성구 궁동 402-4 1층">Sao chép địa chỉ</button></div>
+      </div>
+      <div class="row">
+        <span class="ri"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+        <div><small>Địa chỉ 2 · Lộc Boong Store</small><b class="ko">대전 서구 도마동 25-2 폰매장</b>
+          <button class="copy" type="button" data-copy="대전 서구 도마동 25-2 폰매장">Sao chép địa chỉ</button></div>
+      </div>
+      <div class="row">
+        <span class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><small>Giờ mở cửa</small><b>11:00 AM – 10:00 PM</b><small>Tư vấn online: 11:00 AM – 9:00 PM</small></div>
+      </div>
+      <div class="row">
+        <span class="ri"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span>
+        <div><small>Hotline</small><b><a href="tel:+821097301903">010-9730-1903</a></b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Hình ảnh ===== -->
+  <section class="reveal">
+    <h2 class="h2">Khoảnh khắc tại quán</h2>
+    <div class="gallery">
+      <button data-zoom="assets/team.webp"><img src="assets/team.webp" alt="Đội ngũ Xi Trum Mobile" loading="lazy"></button>
+      <button data-zoom="assets/storefront.webp"><img src="assets/storefront.webp" alt="Mặt tiền cửa hàng" loading="lazy"></button>
+      <button data-zoom="assets/g1.webp"><img src="assets/g1.webp" alt="Khách hàng tại quán" loading="lazy"></button>
+      <button data-zoom="assets/g3.webp"><img src="assets/g3.webp" alt="Khách hàng nhận máy" loading="lazy"></button>
+      <button data-zoom="assets/g2.webp"><img src="assets/g2.webp" alt="Khách hàng chụp ảnh lưu niệm" loading="lazy"></button>
+      <button data-zoom="assets/g4.webp"><img src="assets/g4.webp" alt="Hàng mới về" loading="lazy"></button>
+      <button data-zoom="assets/g6.webp"><img src="assets/g6.webp" alt="Hội thao 2026" loading="lazy"></button>
+      <button data-zoom="assets/g7.webp"><img src="assets/g7.webp" alt="Khách hàng tại quán" loading="lazy"></button>
+      <button data-zoom="assets/g8.webp"><img src="assets/g8.webp" alt="Khách hàng tại quán" loading="lazy"></button>
+      <button data-zoom="assets/g9.webp"><img src="assets/g9.webp" alt="Khách hàng nhận máy" loading="lazy"></button>
+      <button data-zoom="assets/g10.webp"><img src="assets/g10.webp" alt="Khách hàng tại quán" loading="lazy"></button>
+      <button class="more-item" data-zoom="assets/g11.webp"><img src="assets/g11.webp" alt="Khách đến quán" loading="lazy"></button>
+      <button class="more-item" data-zoom="assets/g12.webp"><img src="assets/g12.webp" alt="Khách hàng tại quán" loading="lazy"></button>
+      <button class="more-item" data-zoom="assets/g13.webp"><img src="assets/g13.webp" alt="Khách hàng tại quán" loading="lazy"></button>
+      <button class="more-item" data-zoom="assets/g14.webp"><img src="assets/g14.webp" alt="Khách hàng tại quán" loading="lazy"></button>
+      <button class="more-item" data-zoom="assets/g15.webp"><img src="assets/g15.webp" alt="Hàng mới về" loading="lazy"></button>
+      <button class="more-item" data-zoom="assets/g16.webp"><img src="assets/g16.webp" alt="Khách hàng nhận máy" loading="lazy"></button>
+      <button class="more-item" data-zoom="assets/g17.webp"><img src="assets/g17.webp" alt="Khách hàng trước cửa hàng" loading="lazy"></button>
+      <button class="more-item" data-zoom="assets/g18.webp"><img src="assets/g18.webp" alt="Khách hàng nhận máy" loading="lazy"></button>
+      <button class="more-item" data-zoom="assets/g19.webp"><img src="assets/g19.webp" alt="Khách hàng tại quán" loading="lazy"></button>
+    </div>
+    <button class="show-more" id="showMore" type="button">Xem thêm 9 ảnh</button>
+  </section>
+
+  <footer>
+    <div class="soc">
+      <a href="https://www.facebook.com/profile.php?id=61592877740484" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07"/></svg></a>
+      <a class="tt-link" href="https://www.tiktok.com/@xitrummobile" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.4v13.7a2.9 2.9 0 1 1-2-2.8V9.4a6.3 6.3 0 1 0 5.4 6.3V8.7a8.2 8.2 0 0 0 4.8 1.5V6.8a4.9 4.9 0 0 1-1-.1z"/></svg></a>
+      <a href="tel:+821097301903" aria-label="Gọi điện"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+    </div>
+    © <span id="yr">2026</span> Xi Trum Mobile · Daejeon, Korea
+  </footer>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <button class="x" type="button" aria-label="Đóng">×</button>
+  <img alt="">
+  <div class="cap"></div>
+</div>
+<div class="toast" id="toast">Đã sao chép địa chỉ</div>
+
+<script src="products.js"></script>
+<script>
+  // Hàng mới về
+  (function(){
+    var el=document.getElementById('feat'); if(!el||!window.XT_PRODUCTS) return;
+    var esc=function(s){return String(s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+    el.innerHTML=XT_PRODUCTS.filter(function(p){return p.featured}).map(function(p){
+      return '<a class="fp" href="catalog.html#'+p.cat+'"><div class="art">'+(p.tag?'<span class="tag">'+esc(p.tag)+'</span>':'')+
+        (p.img?'<img src="'+esc(p.img)+'" alt="" loading="lazy">':XT_ART(p.cat,p.color))+'</div><div class="b"><h3>'+esc(p.name)+'</h3>'+
+        '<div class="pr'+(p.price?'':' ask')+'">'+(p.price?esc(p.price):'Inbox báo giá')+'</div></div></a>';
+    }).join('');
+  })();
+
+  // Trạng thái mở cửa theo giờ Hàn Quốc (KST, UTC+9)
+  (function(){
+    var now=new Date(), kst=new Date(now.getTime()+now.getTimezoneOffset()*60000+9*3600000);
+    var h=kst.getHours()+kst.getMinutes()/60, open=h>=11&&h<22;
+    document.getElementById('statusText').textContent=open?'Đang mở cửa · đến 22:00':'Đã đóng · mở lúc 11:00';
+    if(!open)document.getElementById('status').classList.add('closed');
+    document.getElementById('yr').textContent=kst.getFullYear();
+  })();
+
+  // Phóng to ảnh / QR
+  var modal=document.getElementById('modal'), mImg=modal.querySelector('img'), mCap=modal.querySelector('.cap');
+  document.querySelectorAll('[data-zoom]').forEach(function(el){
+    el.addEventListener('click',function(e){
+      e.preventDefault();
+      mImg.src=el.dataset.zoom; mImg.alt=el.dataset.cap||'';
+      mCap.textContent=el.dataset.cap||'';
+      modal.classList.add('open');
+    });
+  });
+  modal.addEventListener('click',function(e){ if(e.target!==mImg) modal.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') modal.classList.remove('open'); });
+
+  // Xem thêm ảnh
+  document.getElementById('showMore').addEventListener('click',function(){ document.querySelector('.gallery').classList.add('all'); });
+
+  // Sao chép địa chỉ
+  var toast=document.getElementById('toast');
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.dataset.copy, done=function(){toast.classList.add('show');setTimeout(function(){toast.classList.remove('show')},1600)};
+      if(navigator.clipboard) navigator.clipboard.writeText(t).then(done,done); else done();
+    });
+  });
+
+  // Hiệu ứng xuất hiện khi cuộn
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(s){io.observe(s)});
+  } else document.querySelectorAll('.reveal').forEach(function(s){s.classList.add('in')});
+</script>
+</body>
+</html>
