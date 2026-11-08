@@ -193,6 +193,17 @@
   .modal .x{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:0;background:#fff;color:var(--navy);font-size:22px;font-weight:700;cursor:pointer}
   .modal .cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font-size:13px;padding:0 16px}
 
+  .zsheet{position:fixed;inset:0;background:rgba(0,14,34,.7);display:none;align-items:flex-end;justify-content:center;z-index:55}
+  .zsheet.open{display:flex}
+  .zbox{position:relative;width:100%;max-width:480px;background:#fff;border-radius:22px 22px 0 0;padding:20px 18px calc(18px + env(safe-area-inset-bottom));text-align:center;display:grid;gap:10px}
+  .zx{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:var(--bg);color:var(--navy);font-size:20px;font-weight:700;cursor:pointer}
+  .zt{font-size:18px;font-weight:800;color:var(--navy)}
+  .zn{font-size:14px;color:var(--muted);margin-top:-6px}
+  .zbtn{display:block;width:100%;padding:13px;border-radius:14px;font-family:inherit;font-weight:800;font-size:15px;cursor:pointer}
+  .zopen{background:#0068FF;color:#fff}
+  .zcopy{background:#fff;color:#0068FF;border:1.5px solid #0068FF}
+  .zbox img{width:180px;margin:4px auto 0;border-radius:12px}
+  .zbox small{font-size:12px;color:var(--muted)}
   .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--navy);color:#fff;font-size:13px;font-weight:600;padding:10px 16px;border-radius:999px;transition:.25s;z-index:60;pointer-events:none}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
@@ -240,9 +251,9 @@
       <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
     </a>
 
-    <a class="cta" id="zaloBtn" href="https://zaloapp.com/qr/p/vrrm9as113tc" target="_blank" rel="noopener" data-qr="assets/zalo-qr.webp" data-cap="Quét mã QR bằng Zalo trên điện thoại để nhắn Bé Xì Trum">
+    <a class="cta" id="zaloBtn" href="https://zalo.me/821049210207" target="_blank" rel="noopener">
       <span class="ic zalo">Zalo</span>
-      <span class="txt"><b>Zalo Bé Xì Trum</b><small>(+82) 010-4921-0207 · bấm để nhắn Zalo ngay</small></span>
+      <span class="txt"><b>Zalo Bé Xì Trum</b><small>(+82) 010-4921-0207 · bấm để nhắn Zalo</small></span>
       <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
     </a>
 
@@ -368,6 +379,17 @@
   <img alt="">
   <div class="cap"></div>
 </div>
+<div class="zsheet" id="zsheet" role="dialog" aria-modal="true" aria-label="Liên hệ Zalo">
+  <div class="zbox">
+    <button class="zx" type="button" aria-label="Đóng">×</button>
+    <b class="zt">Zalo Bé Xì Trum</b>
+    <span class="zn">(+82) 010-4921-0207</span>
+    <a class="zbtn zopen" href="https://zalo.me/821049210207" target="_blank" rel="noopener">Mở Zalo nhắn tin</a>
+    <button class="zbtn zcopy" type="button" data-copy="+821049210207" data-msg="Đã sao chép số Zalo">Sao chép số Zalo</button>
+    <img src="assets/zalo-qr.webp" alt="Mã QR Zalo Bé Xì Trum" loading="lazy">
+    <small>Không mở được? Sao chép số rồi tìm trong Zalo, hoặc quét mã QR.</small>
+  </div>
+</div>
 <div class="toast" id="toast">Đã sao chép địa chỉ</div>
 
 <script src="products.js"></script>
@@ -402,18 +424,13 @@
       modal.classList.add('open');
     });
   });
-  // Zalo: điện thoại mở thẳng app Zalo; máy tính hiện mã QR để quét
+  // Zalo: hiện bảng chọn (mở Zalo / sao chép số / mã QR)
   var zb=document.getElementById('zaloBtn');
-  var isPhone=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Macintosh/.test(navigator.userAgent));
-  if(zb&&!isPhone){
-    zb.addEventListener('click',function(e){
-      e.preventDefault();
-      mImg.src=zb.dataset.qr; mImg.alt=zb.dataset.cap; mCap.textContent=zb.dataset.cap;
-      modal.classList.add('open');
-    });
-  }
+  var zs=document.getElementById('zsheet');
+  zb.addEventListener('click',function(e){ e.preventDefault(); zs.classList.add('open'); });
+  zs.addEventListener('click',function(e){ if(e.target===zs||e.target.classList.contains('zx')) zs.classList.remove('open'); });
   modal.addEventListener('click',function(e){ if(e.target!==mImg) modal.classList.remove('open'); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape') modal.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ modal.classList.remove('open'); zs.classList.remove('open'); } });
 
   // Xem thêm ảnh
   document.getElementById('showMore').addEventListener('click',function(){ document.querySelector('.gallery').classList.add('all'); });
@@ -422,7 +439,7 @@
   var toast=document.getElementById('toast');
   document.querySelectorAll('[data-copy]').forEach(function(b){
     b.addEventListener('click',function(){
-      var t=b.dataset.copy, done=function(){toast.classList.add('show');setTimeout(function(){toast.classList.remove('show')},1600)};
+      var t=b.dataset.copy, done=function(){toast.textContent=b.dataset.msg||'Đã sao chép địa chỉ';toast.classList.add('show');setTimeout(function(){toast.classList.remove('show')},1600)};
       if(navigator.clipboard) navigator.clipboard.writeText(t).then(done,done); else done();
     });
   });
